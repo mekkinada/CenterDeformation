@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view transient="true" 
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <html xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:h="http://xmlns.jcp.org/jsf/html"
+          xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+          xmlns:f="http://xmlns.jcp.org/jsf/core">
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+
+            <ui:define name="js">
+                <h:outputScript library="js" name="bootstrap.min.js" />
+                <h:outputScript library="js" name="jquery-1.11.1.js" />
+            </ui:define>
+
+            <ui:define name="header" >
+                <h2>DashBoard</h2> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-0 col-lg-offset-12" style="margin-top: -30px">
+                            <h:form>
+                                <h:commandButton 
+                                                  id="logoffbtn" 
+                                                  value="Log off" 
+                                                  class="btn btn-warning" 
+                                                  onclick="return confirm('Are U sure, App will Log Out!!')" 
+                                                  action="#{coursesController.logOff()}" />
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="content">
+
+                <h1>Available Courses</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+
+                            <h:form id="courses-form" prependId="false" >
+
+                                <center>
+
+                                    <br/><br/>
+                                    <h:link value="Add-New-Course" 
+                                            outcome="addcourse" 
+                                            class="btn btn-success" 
+                                            role="button"/>
+                                    <br/><br/>
+                                    <div class="table-responsive">
+                                        <h:dataTable 
+                                            var="course"
+                                            value="#{coursesController.showAllCourses()}"
+                                            cellpadding="2"
+                                            cellspacing="2" 
+                                            class="table table-inverse table-hover table-striped table-bordered  text-center table-condensed">
+
+
+                                            <h:column>
+                                                <f:facet name="header">ID</f:facet>
+                                                <h:outputText value="#{course.id}" />
+                                            </h:column>
+
+
+                                            <h:column>
+                                                <f:facet name="header">Course-title</f:facet>
+                                                <h:outputText value="#{course.title}" id="title"/>
+                                            </h:column>
+
+
+                                            <h:column>
+                                                <f:facet name="header">price</f:facet>
+                                                <h:outputText value="#{course.price}" />
+                                            </h:column>
+
+
+                                            <h:column>
+                                                <f:facet name="header">Show-assigned-Students</f:facet>
+                                                <h:commandLink value="Students in couse" action="#{coursesController.setCourse(course)}"/>
+                                            </h:column>
+
+
+                                            <h:column >
+                                                <f:facet name="header" >Course-Options</f:facet>
+                                                <h:commandLink   action="#{coursesController.deleteCourse(course)}" 
+                                                                 onclick="return confirm('Are you sure??')" 
+                                                                 class="btn btn-danger " 
+                                                                 role="button">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                    Delete
+                                                </h:commandLink>
+                                                <h:commandLink  
+                                                    action="#{coursesController.setCourseToUpdate(course)}" 
+                                                    class="btn btn-info "
+                                                    role="button"  >
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                    Update
+                                                </h:commandLink>
+                                            </h:column>
+
+
+
+                                        </h:dataTable>
+                                    </div>
+
+                                </center>
+
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </html>
+</f:view>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view transient="true" >
+        <ui:composition template="/template/template.xhtml" >
+
+            <ui:define name="css">
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="background.css" />
+            </ui:define>
+
+            <ui:define name="header">
+                <center>Add-Course</center>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form style="margin: 100px 0 0 0">
+                    <h:commandButton  id="back" 
+                                      value="Back-To-Courses" 
+                                      class="btn btn-info" 
+                                      action="#{coursesController.backToCourses()}" />
+                </h:form>
+                <div class="container">
+                    <f:view>
+                        <h:form class="form-horizontal" style=" margin: 50px">
+                            
+                            
+                            <h:outputLabel value="Course title: " class=""/>
+                            <h:inputText value="#{coursesController.addedCoursee.title}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         requiredMessage="Please enter Course title">
+
+                            </h:inputText>
+                            
+                            <h:outputLabel value="Price: " class="" />
+                            <h:inputText value="#{coursesController.addedCoursee.price}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         requiredMessage="Please enter price" >
+                                <f:convertNumber integerOnly="true"  type="currency"/>
+                            </h:inputText>
+
+
+                            <h:commandButton value="AddToDB" 
+                                             action="#{coursesController.addCourse()}" 
+                                             class="btn btn-success" 
+                                             style="margin: 20px"/>
+                            <h:messages />
+                        </h:form>
+                    </f:view>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </f:view>
+
+
+
+</html>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Profile" table="profile" catalog="center" optimistic-lock="version">
+        <id name="idProfile" type="int">
+            <column name="ID_PROFILE" />
+            <generator class="assigned" />
+        </id>
+        <property name="idUser" type="string">
+            <column name="ID_USER" length="225" />
+        </property>
+        <property name="libProfileAr" type="string">
+            <column name="LIB_PROFILE_AR" />
+        </property>
+        <property name="libProfileEn" type="string">
+            <column name="LIB_PROFILE_EN" />
+        </property>
+        <property name="descpProfile" type="string">
+            <column name="DESCP_PROFILE" />
+        </property>
+    </class>
+</hibernate-mapping>

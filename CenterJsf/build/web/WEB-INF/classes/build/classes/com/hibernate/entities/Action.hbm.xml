@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Action" table="action" catalog="center" optimistic-lock="version">
+        <id name="idAction" type="int">
+            <column name="ID_ACTION" />
+            <generator class="assigned" />
+        </id>
+        <property name="libAction" type="string">
+            <column name="LIB_ACTION" />
+        </property>
+        <property name="descpAction" type="string">
+            <column name="DESCP_ACTION" />
+        </property>
+    </class>
+</hibernate-mapping>

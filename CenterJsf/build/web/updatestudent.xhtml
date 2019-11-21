@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view transient="true">
+    <ui:composition  template="/template/template.xhtml">
+        <ui:define name="css" >
+            <h:outputStylesheet library="css" name="bootstrap.min.css" />
+            <h:outputStylesheet library="css" name="dashboard.css" />    
+        </ui:define>
+
+
+        <ui:define name="header" >
+            <h2>Update Course</h2> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-0 col-lg-offset-12" style="margin-top: -30px">
+                        <h:form>
+                            <h:commandButton  id="logoffbtn" 
+                                              value="Log off" 
+                                              class="btn btn-warning" 
+                                              onclick="return confirm('Are U sure, App will Log Out!!')" 
+                                              action="#{coursesController.logOff()}" />
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+
+        <ui:define name="content">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <f:view>
+
+
+                            <h:form class="form-horizontal" style="margin: 100px 0 0 250px ">
+                                <h1 style="margin: 50px 0 0 -300px">Update</h1>
+                                <div class="form-group">
+                                    <h:outputLabel value="Firstname:" 
+                                                   for="firstname" 
+                                                   class="control-label col-sm-2" />
+                                    <h:inputText required="true" 
+                                                 requiredMessage="first-name is required" 
+                                                 id="firstname" 
+                                                 value="#{coursesController.updatedStudent.firstName}" 
+                                                 title="firstname" 
+                                                 class="form-control" 
+                                                 style="width:300px" />
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="Lastname:" 
+                                                   for="lastname" 
+                                                   class="control-label col-sm-2" />
+                                    <h:inputText id="lastname" 
+                                                 required="true" 
+                                                 requiredMessage="last-name is required"  
+                                                 value="#{coursesController.updatedStudent.lastName}" 
+                                                 title="lastname"  
+                                                 class="form-control" 
+                                                 style="width:300px" />
+                                </div>
+
+                                <div class="form-group">
+                                    <h:outputLabel value="Address:" 
+                                                   for="address" 
+                                                   class="control-label col-sm-2" />
+                                    <h:inputText id="address"   
+                                                 value="#{coursesController.updatedStudent.address}" 
+                                                 title="address"  
+                                                 class="form-control" 
+                                                 style="width:300px" />
+                                </div>
+
+                                <div class="form-group">
+                                    <h:outputLabel value="Phone:" 
+                                                   for="phone" 
+                                                   class="control-label col-sm-2" />
+                                    <h:inputText id="phone" 
+                                                 required="true" 
+                                                 requiredMessage="phone is required" 
+                                                 value="#{coursesController.updatedStudent.phone}" 
+                                                 title="phone"  
+                                                 class="form-control" 
+                                                 style="width:300px" >
+                                        <f:convertNumber integerOnly="true" 
+                                                         minIntegerDigits="11" 
+                                                         maxIntegerDigits="20" />
+                                    </h:inputText>
+                                </div>
+
+                                <div class="form-group">
+                                    <h:outputLabel value="Faculty:" 
+                                                   for="faculty" 
+                                                   class="control-label col-sm-2" />
+                                    <h:inputText id="faculty" 
+                                                 value="#{coursesController.updatedStudent.faculty}" 
+                                                 title="faculty"  
+                                                 class="form-control" 
+                                                 style="width:300px" />
+                                </div>
+
+                                <div class="form-group">
+                                    <h:outputLabel value="Gender:" 
+                                                   for="gender" 
+                                                   class="control-label col-sm-2" />
+                                    <h:selectOneMenu value="#{coursesController.updatedStudent.gender}" 
+                                                     id="gender" 
+                                                     class="form-control"  
+                                                     style="width: 100px">
+                                        <f:selectItem itemValue="Male" itemLabel="male" />
+                                        <f:selectItem itemValue="Female" itemLabel="female" />
+                                    </h:selectOneMenu>
+                                </div>
+
+                                <div class="form-group">
+                                    <h:outputLabel value="Paid:" 
+                                                   for="paid" 
+                                                   class="control-label col-sm-2" />
+                                    <h:selectOneMenu value="#{coursesController.updatedStudent.paid}" 
+                                                     id="paid" 
+                                                     class="form-control"  
+                                                     style="width: 100px">
+                                        <f:selectItem itemValue="Yes" itemLabel="yes" />
+                                        <f:selectItem itemValue="Not yet!!" itemLabel="no" />
+                                    </h:selectOneMenu>
+                                </div>
+
+
+
+                                <h:commandLink class="btn btn-success" 
+                                               role="button" 
+                                               style="margin: 0 0 0 250px" 
+                                               action="#{coursesController.updateStudent() }">
+                                    <span class="glyphicon glyphicon-pencil" ></span>
+                                    Save
+                                </h:commandLink>
+                                <h:messages style="background-color: wheat" />
+                            </h:form>
+
+
+                        </f:view>
+
+
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+        </f:view>
+</html>
+

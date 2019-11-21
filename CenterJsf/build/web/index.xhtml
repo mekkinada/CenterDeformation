@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view  transient="true"
+         xmlns:f="http://xmlns.jcp.org/jsf/core">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/template/template.xhtml">
+        <ui:define name="css">
+            <h:outputStylesheet library="css" name="index.css" />
+            
+        </ui:define>
+     
+        <ui:define name="content">
+            <center>
+                 
+                <h1>Training Center</h1>
+            </center>
+            <h:form id="admin-form" prependId="false">
+                
+                <h:outputLabel value="Name User" />
+                <h:inputText value="#{dashBoardController.use.nameUsedAr}" />
+                <br/><br/>
+                <h:outputLabel value="password" />
+                <h:inputSecret value="#{dashBoardController.use.pwdUser}" />
+                 <h:commandButton value="Login"  
+                                 action="#{dashBoardController.authorize()}"/>
+                <br/><br/>
+                
+                     <p>If you are not registered, register here by pressing the link
+                    
+                        <h:commandLink  
+                                                     action="#{userController.affUser()}" 
+                                                    class="btn btn-info "
+                                                    role="button"  >
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                   Register
+                                                </h:commandLink> 
+                     </p> 
+               
+              
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+</html>
+</f:view>

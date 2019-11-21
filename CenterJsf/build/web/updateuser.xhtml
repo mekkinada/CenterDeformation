@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view transient="true" >
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+
+
+            <ui:define name="header" >
+                <h2>Update User</h2> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-0 col-lg-offset-12" style="margin-top: -30px">
+                            <h:form>
+                                <h:commandButton  id="logoffbtn" 
+                                                  value="Log off" 
+                                                  class="btn btn-warning" 
+                                                  onclick="return confirm('Are U sure, App will Log Out!!')" 
+                                                  action="#{userController.Off()}" />
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="content">
+
+
+                <h:form style="margin: 100px 0 0 0">
+                    <h:commandButton  id="back" 
+                                      value="Back-To-User" 
+                                      class="btn btn-info" 
+                                      action="#{userController.backToUser()}" />
+                </h:form>
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <f:view>
+
+
+                                <h:form class="form-horizontal" style="margin: 100px 0 0 250px ">
+                                    <h1 style="margin: 50px 0 0 -300px">Update</h1>
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="Id:" 
+                                                       for="id" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="idUser" 
+                                                     value="#{userController.updatedUse.idUser}" 
+                                                     title="Id"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter Id" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+               <div class="form-group">
+                                        <h:outputLabel value="identityUsed:" 
+                                                       for="identityUsed" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="identiyUserd" 
+                                                     value="#{userController.updatedUse.identityUsed}" 
+                                                     title="identityUsed"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter identityUsed" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                         <div class="form-group">
+                                        <h:outputLabel value="pwd User :" 
+                                                       for="pwd User" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="pwdUser" 
+                                                     value="#{userController.updatedUse.pwdUser}" 
+                                                     title="pwd User"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter pwd User" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                     <div class="form-group">
+                                        <h:outputLabel value="first Name :" 
+                                                       for="first Name" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="firstName" 
+                                                     value="#{userController.updatedUse.firstNameUsedAr}" 
+                                                     title="first Name"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter first Name" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+
+                                       <div class="form-group">
+                                        <h:outputLabel value="name Used :" 
+                                                       for="name Used" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="nameUsedAr" 
+                                                     value="#{userController.updatedUse.nameUsedAr}" 
+                                                     title="name Used"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter name Used" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                         <div class="form-group">
+                                        <h:outputLabel value="tel 1 :" 
+                                                       for="tel 1" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="telfUsedPers" 
+                                                     value="#{userController.updatedUse.telfUsedPers}" 
+                                                     title="tel 1"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter tel 1}" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                    
+                                           <div class="form-group">
+                                        <h:outputLabel value="tel 2:" 
+                                                       for="tel 2" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="tel2UserPers" 
+                                                     value="#{userController.updatedUse.tel2UserPers}" 
+                                                     title="tel 2"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter tel 2" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                          <div class="form-group">
+                                        <h:outputLabel value="sex :" 
+                                                       for="sex" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="sexUsed" 
+                                                     value="#{userController.updatedUse.sexUsed}" 
+                                                     title="sex"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter sex" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                          <div class="form-group">
+                                        <h:outputLabel value="date Creation:" 
+                                                       for="date Creation" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="dateCreationUsed" 
+                                                     value="#{userController.updatedUse.dateCreationUsed}" 
+                                                     title="date Creation"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter date Creation" 
+                                                     class="form-control" 
+                                                     style="width:300px" >
+                                                <f:convertDateTime pattern="yyyy-dd-MM" type="date" />
+                            </h:inputText> 
+                                    </div>
+                                    
+                                          <div class="form-group">
+                                        <h:outputLabel value="date Affec :" 
+                                                       for="date Affe" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="dateAffecUsedateSystem" 
+                                                     value="#{userController.updatedUse.dateAffecUsedateSystem}" 
+                                                     title="date Affec"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter date Affec" 
+                                                     class="form-control" 
+                                                     style="width:300px" >
+                                                <f:convertDateTime pattern="yyyy-dd-MM" type="date" />
+                            </h:inputText> 
+                                    </div>
+                                   
+                                          <div class="form-group">
+                                        <h:outputLabel value="date Birth:" 
+                                                       for="date Birth" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="dateBirthUsed" 
+                                                     value="#{userController.updatedUse.dateBirthUsed}" 
+                                                     title="date Birth"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter date Birth" 
+                                                     class="form-control" 
+                                                     style="width:300px" >
+                                                <f:convertDateTime pattern="yyyy-dd-MM" type="date" />
+                            </h:inputText> 
+                                    </div>
+                                   
+                                    
+                                                 <div class="form-group">
+                                        <h:outputLabel value="place identity:" 
+                                                       for="place identity" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="identityUsed" 
+                                                     value="#{userController.updatedUse.identityUsed}" 
+                                                     title="place identity"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter place identity " 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                  
+                                                 <div class="form-group">
+                                        <h:outputLabel value="email 1:" 
+                                                       for="email 1" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="email1Used" 
+                                                     value="#{userController.updatedUse.email1Used}" 
+                                                     title="email 1"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter email 1 " 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                    
+                                                 <div class="form-group">
+                                        <h:outputLabel value="email 2:" 
+                                                       for="place Birth" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="email2Used" 
+                                                     value="#{userController.updatedUse.email2Used}" 
+                                                     title="place Birth"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter email 2 " 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                
+                                                 <div class="form-group">
+                                        <h:outputLabel value="address 1:" 
+                                                       for="address1Used" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="placeBirthUsed" 
+                                                     value="#{userController.updatedUse.address1Used}" 
+                                                     title="address1Used"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter address 1 }" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                   
+                                    
+                                                 <div class="form-group">
+                                        <h:outputLabel value="indication address:" 
+                                                       for="indication address" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="indicationAdr" 
+                                                     value="#{userController.updatedUse.indicationAdr}" 
+                                                     title="indication address"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter indication address}" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                 
+                                                 <div class="form-group">
+                                        <h:outputLabel value="note :" 
+                                                       for="note :" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="placeBirthUsed" 
+                                                     value="#{userController.updatedUse.noteUsed}" 
+                                                     title="note"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter note }" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                               
+                                                   <div class="form-group">
+                                        <h:outputLabel value="date Issue Cin :" 
+                                                       for="date Issue Cin:" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="dateIssueCin" 
+                                                     value="#{userController.updatedUse.dateIssueCin}" 
+                                                     title="dateIssueCin"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter date Issue Cin " 
+                                                     class="form-control" 
+                                                     style="width:300px" >
+                                             <f:convertDateTime pattern="yyyy-dd-MM" type="date" />
+                            </h:inputText> 
+                                    </div>
+                               
+                                                <div class="form-group">
+                                        <h:outputLabel value="date issue passport :" 
+                                                       for="date issue passport :" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="dateIssuePa" 
+                                                     value="#{userController.updatedUse.dateIssuePa}" 
+                                                     title="dateIssueCin"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter date issue passport " 
+                                                     class="form-control" 
+                                                     style="width:300px" >
+                                                <f:convertDateTime pattern="yyyy-dd-MM" type="date" />
+                            </h:inputText> 
+                                    </div>
+                                
+                                                 <div class="form-group">
+                                        <h:outputLabel value="date Expiration passport :" 
+                                                       for="date Expiration passport :" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="dateIssuePa" 
+                                                     value="#{userController.updatedUse.dateExpirationAp}" 
+                                                     title="date Expiration"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter date Expiration passport " 
+                                                     class="form-control" 
+                                                     style="width:300px" >
+                                                <f:convertDateTime pattern="yyyy-dd-MM" type="date" />
+                            </h:inputText> 
+                                    </div>
+                            
+                                           <div class="form-group">
+                                        <h:outputLabel value="Photo :" 
+                                                       for="Photo :" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="urlPhoto" 
+                                                     value="#{userController.updatedUse.urlPhoto}" 
+                                                     title="Photo"   
+                                                     required="true" 
+                                                     requiredMessage="Please enter Photo " 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                 
+                                    <h:commandLink class="btn btn-success" 
+                                                   role="button" 
+                                                   style="margin: 0 0 0 250px" 
+                                                   action="#{userController.Updateuser()}">
+                                        <span class="glyphicon glyphicon-pencil" ></span>
+                                        Save
+                                    </h:commandLink>
+                                    <br/><br/>
+                                    <br/><br/>
+                                    <br/><br/>
+                                    
+                                    <h:messages style="background: white" />
+                                </h:form>
+
+                                    <br/><br/>
+                                    <br/><br/>
+                                    <br/><br/>
+                                
+                            </f:view>
+
+
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
+

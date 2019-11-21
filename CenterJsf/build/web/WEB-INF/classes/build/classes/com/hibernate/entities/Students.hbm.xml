@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Students" table="students" catalog="center" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="faculty" type="string">
+            <column name="faculty" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name" length="50" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="50" not-null="true" />
+        </property>
+        <property name="birthdate" type="date">
+            <column name="birthdate" length="10" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="65535" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10" />
+        </property>
+        <property name="registrationDate" type="date">
+            <column name="registration_date" length="10" not-null="true" />
+        </property>
+        <property name="paid" type="string">
+            <column name="Paid" length="11" not-null="true" />
+        </property>
+        <set name="coursesStudentses" table="courses_students" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_id" />
+            </key>
+            <one-to-many class="com.hibernate.entities.CoursesStudents" />
+        </set>
+    </class>
+</hibernate-mapping>

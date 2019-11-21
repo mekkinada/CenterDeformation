@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Country" table="country" catalog="center" optimistic-lock="version">
+        <id name="idCountry" type="string">
+            <column name="ID_COUNTRY" length="4" />
+            <generator class="assigned" />
+        </id>
+        <property name="idGovernorate" type="string">
+            <column name="ID_GOVERNORATE" length="2" />
+        </property>
+        <property name="idStateCountry" type="java.lang.Integer">
+            <column name="ID_STATE_COUNTRY" />
+        </property>
+        <property name="libCountryAr" type="string">
+            <column name="LIB_COUNTRY_AR" />
+        </property>
+        <property name="libCountryEn" type="string">
+            <column name="LIB_COUNTRY_EN" />
+        </property>
+        <property name="libDescpCountry" type="string">
+            <column name="LIB_DESCP_COUNTRY" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.UserLog" table="user_log" catalog="center" optimistic-lock="version">
+        <composite-id name="id" class="com.hibernate.entities.UserLogId">
+            <key-property name="idUser" type="string">
+                <column name="ID_USER" length="225" />
+            </key-property>
+            <key-property name="idAction" type="int">
+                <column name="ID_ACTION" />
+            </key-property>
+        </composite-id>
+        <property name="descpActionUsed" type="string">
+            <column name="DESCP_ACTION_USED" />
+        </property>
+        <property name="dateAction" type="date">
+            <column name="DATE___ACTION" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view transient="true" >
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+
+
+            <ui:define name="header" >
+                <h2>Add Student to #{coursesController.courseTitle}</h2> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-0 col-lg-offset-12" style="margin-top: -30px">
+                            <h:form>
+                                <h:commandButton  id="logoffbtn"
+                                                  value="Log off"
+                                                  class="btn btn-warning"
+                                                  onclick="return confirm('Are U sure, App will Log Out!!')"
+                                                  action="#{coursesController.logOff()}" />
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="content">
+
+                <h:form style="margin: 100px 0 0 0">
+                    <h:commandButton  id="back"
+                                      value="Back-To-Courses" 
+                                      class="btn btn-info" 
+                                      action="#{coursesController.backToCourses()}" />
+                </h:form>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <f:view>
+
+
+                                <h:form class="form-horizontal" style="margin: 50px 0 0 250px ">
+
+
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="FirstName:" 
+                                                       for="firstName" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="firstName" 
+                                                     required="true" 
+                                                     requiredMessage="first-name is required" 
+                                                     value="#{coursesController.student.firstName}" 
+                                                     title="FirstName" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="LastName:" 
+                                                       for="lastName" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="lastName" 
+                                                     required="true" 
+                                                     requiredMessage="last-name is required" 
+                                                     value="#{coursesController.student.lastName}" 
+                                                     title="LastName" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="Address:" 
+                                                       for="address" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="address" 
+                                                     value="#{coursesController.student.address}" 
+                                                     required="false" 
+                                                     requiredMessage="address is required" 
+                                                     title="Address"  
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="Phone:" 
+                                                       for="phone" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="phone" 
+                                                     value="#{coursesController.student.phone}" 
+                                                     title="phone" 
+                                                     class="form-control" 
+                                                     required="true" 
+                                                     requiredMessage="phone is required" 
+                                                     style="width:300px" >
+                                            <f:convertNumber integerOnly="true" />
+                                        </h:inputText>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="Faculty:" 
+                                                       for="faculty" 
+                                                       class="control-label col-sm-2" />
+                                        <h:inputText id="faculty" 
+                                                     value="#{coursesController.student.faculty}" 
+                                                     title="faculty"  
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="Gender:" 
+                                                       for="gender" 
+                                                       class="control-label col-sm-2" />
+                                        <h:selectOneMenu value="#{coursesController.student.gender}" 
+                                                         id="gender" 
+                                                         class="form-control"  
+                                                         style="width: 100px">
+                                            <f:selectItem itemValue="Male" itemLabel="male" />
+                                            <f:selectItem itemValue="Female" itemLabel="female" />
+                                        </h:selectOneMenu>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h:outputLabel value="Paid:" 
+                                                       for="paid" 
+                                                       class="control-label col-sm-2" />
+                                        <h:selectOneMenu value="#{coursesController.student.paid}" 
+                                                         id="paid" 
+                                                         class="form-control"  
+                                                         style="width: 100px">
+                                            <f:selectItem itemValue="Yes" itemLabel="yes" />
+                                            <f:selectItem itemValue="Not yet!!" itemLabel="no" />
+                                        </h:selectOneMenu>    
+                                    </div>
+
+                                    <h:commandButton class="btn btn-success"  
+                                                     style=" margin: 0 0 0 250px" 
+                                                     value="Save" 
+                                                     action="#{coursesController.addStudent()}" />
+                                    <h:messages  style="background-color: #f7e1b5" />
+                                </h:form>
+                            </f:view>
+
+
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
+

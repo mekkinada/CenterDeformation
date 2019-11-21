@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Trainer" table="trainer" catalog="center" optimistic-lock="version">
+        <id name="cin" type="int">
+            <column name="CIN" />
+            <generator class="assigned" />
+        </id>
+        <property name="theName" type="string">
+            <column name="THE_NAME" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" />
+        </property>
+        <property name="tel" type="java.lang.Integer">
+            <column name="TEL" />
+        </property>
+    </class>
+</hibernate-mapping>
