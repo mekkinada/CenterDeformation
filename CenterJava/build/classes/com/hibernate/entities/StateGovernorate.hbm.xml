@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.StateGovernorate" table="state__governorate" catalog="center" optimistic-lock="version">
+        <id name="idStateGouv" type="int">
+            <column name="ID_STATE_GOUV" />
+            <generator class="assigned" />
+        </id>
+        <property name="libStateGovAr" type="string">
+            <column name="LIB___STATE___GOV___AR" />
+        </property>
+        <property name="libStateGovEn" type="string">
+            <column name="LIB_STATE_GOV_EN" />
+        </property>
+        <property name="descpStateGov" type="string">
+            <column name="DESCP_STATE_GOV" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.StateUsed" table="state_used" catalog="center" optimistic-lock="version">
+        <id name="idStateUsed" type="int">
+            <column name="ID_STATE_USED" />
+            <generator class="assigned" />
+        </id>
+        <property name="idUser" type="string">
+            <column name="ID_USER" length="225" />
+        </property>
+        <property name="libStateUsedAr" type="string">
+            <column name="LIB_STATE_USED__AR" />
+        </property>
+        <property name="libStateUsedEn" type="string">
+            <column name="LIB_STATE_USED_EN" />
+        </property>
+        <property name="descpUserState" type="string">
+            <column name="DESCP_USER_STATE" />
+        </property>
+    </class>
+</hibernate-mapping>

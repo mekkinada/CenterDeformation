@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Delegation" table="delegation" catalog="center" optimistic-lock="version">
+        <id name="idDelegation" type="string">
+            <column name="ID_DELEGATION" length="4" />
+            <generator class="assigned" />
+        </id>
+        <property name="idLocality" type="java.lang.Integer">
+            <column name="ID_LOCALITY" />
+        </property>
+        <property name="idStateDelegation" type="java.lang.Integer">
+            <column name="ID_STATE_DELEGATION" />
+        </property>
+        <property name="libDlgAr" type="string">
+            <column name="LIB_DLG_AR" />
+        </property>
+        <property name="libDlgEn" type="string">
+            <column name="LIB_DLG__EN" />
+        </property>
+        <property name="descpDlg" type="string">
+            <column name="DESCP_DLG" />
+        </property>
+    </class>
+</hibernate-mapping>

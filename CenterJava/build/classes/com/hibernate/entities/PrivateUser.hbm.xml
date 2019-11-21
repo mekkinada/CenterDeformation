@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.PrivateUser" table="private_user" catalog="center" optimistic-lock="version">
+        <composite-id name="id" class="com.hibernate.entities.PrivateUserId">
+            <key-property name="useIdUser" type="string">
+                <column name="USE_ID_USER" length="225" />
+            </key-property>
+            <key-property name="idPrivilege" type="int">
+                <column name="ID_PRIVILEGE" />
+            </key-property>
+            <key-property name="idUser" type="string">
+                <column name="ID_USER" length="225" />
+            </key-property>
+            <key-property name="idProfile" type="int">
+                <column name="ID_PROFILE" />
+            </key-property>
+        </composite-id>
+        <property name="dateAffectPrivUser" type="date">
+            <column name="DATE_AFFECT_PRIV_USER" length="10" />
+        </property>
+        <property name="stateUsedPrivate" type="java.lang.Integer">
+            <column name="STATE__USED___PRIVATE" />
+        </property>
+        <property name="usedPrivateDateLastChanged" type="date">
+            <column name="USED___PRIVATE___DATE___LAST___CHANGED" length="10" />
+        </property>
+        <property name="motiveDrModifPriv" type="string">
+            <column name="MOTIVE_DR_MODIF_PRIV" />
+        </property>
+        <property name="patternChgState" type="string">
+            <column name="PATTERN___CHG___STATE_" />
+        </property>
+    </class>
+</hibernate-mapping>

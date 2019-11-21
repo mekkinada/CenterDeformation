@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.PrivilegeProfile" table="privilege_profile" catalog="center" optimistic-lock="version">
+        <composite-id name="id" class="com.hibernate.entities.PrivilegeProfileId">
+            <key-property name="idPrivilege" type="int">
+                <column name="ID_PRIVILEGE" />
+            </key-property>
+            <key-property name="idProfile" type="int">
+                <column name="ID_PROFILE" />
+            </key-property>
+        </composite-id>
+        <property name="statePrivateProfile" type="java.lang.Integer">
+            <column name="STATE_PRIVATE_PROFILE" />
+        </property>
+        <property name="dateAffectPrivProfile" type="date">
+            <column name="DATE___AFFECT___PRIV___PROFILE" length="10" />
+        </property>
+        <property name="dateDrAffectPrivateProfile" type="date">
+            <column name="DATE___DR___AFFECT___PRIVATE___PROFILE" length="10" />
+        </property>
+        <property name="motiveChangPrPf" type="string">
+            <column name="MOTIVE_CHANG_PR_PF" />
+        </property>
+        <property name="stateChangPrPf" type="string">
+            <column name="STATE_CHANG_PR_PF" />
+        </property>
+    </class>
+</hibernate-mapping>

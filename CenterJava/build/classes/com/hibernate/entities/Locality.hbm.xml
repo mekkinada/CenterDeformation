@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Locality" table="locality" catalog="center" optimistic-lock="version">
+        <id name="idLocality" type="int">
+            <column name="ID_LOCALITY" />
+            <generator class="assigned" />
+        </id>
+        <property name="idStateLocality" type="java.lang.Integer">
+            <column name="ID_STATE_LOCALITY" />
+        </property>
+        <property name="idUser" type="string">
+            <column name="ID_USER" length="225" />
+        </property>
+        <property name="libLocAr" type="string">
+            <column name="LIB_LOC_AR" length="128" />
+        </property>
+        <property name="libLocFr" type="string">
+            <column name="LIB_LOC_FR" length="128" />
+        </property>
+    </class>
+</hibernate-mapping>

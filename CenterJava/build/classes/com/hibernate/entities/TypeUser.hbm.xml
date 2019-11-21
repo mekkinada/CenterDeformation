@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.TypeUser" table="type_user" catalog="center" optimistic-lock="version">
+        <id name="idTypeUser" type="int">
+            <column name="ID_TYPE_USER" />
+            <generator class="assigned" />
+        </id>
+        <property name="idUser" type="string">
+            <column name="ID_USER" length="225" />
+        </property>
+        <property name="libTpUsedAr" type="string">
+            <column name="LIB___TP___USED___AR" />
+        </property>
+        <property name="libTpUseEn" type="string">
+            <column name="LIB_TP_USE_EN" />
+        </property>
+        <property name="descpTpUser" type="string">
+            <column name="DESCP_TP_USER" />
+        </property>
+    </class>
+</hibernate-mapping>

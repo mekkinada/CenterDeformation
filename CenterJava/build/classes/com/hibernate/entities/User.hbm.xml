@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.User" table="user" catalog="center" optimistic-lock="version">
+        <id name="idUser" type="int">
+            <column name="ID_USER" />
+            <generator class="assigned" />
+        </id>
+        <property name="idStudents" type="java.lang.Integer">
+            <column name="ID_STUDENTS" />
+        </property>
+        <property name="cin" type="java.lang.Integer">
+            <column name="CIN" />
+        </property>
+        <property name="pwdUser" type="string">
+            <column name="PWD_USER" />
+        </property>
+        <property name="identityUsed" type="string">
+            <column name="IDENTITY_USED" />
+        </property>
+        <property name="nameUsedAr" type="string">
+            <column name="NAME_USED_AR" />
+        </property>
+        <property name="firstNameUsedAr" type="string">
+            <column name="FIRST_NAME_USED_AR" />
+        </property>
+        <property name="userNameEn" type="string">
+            <column name="USER_NAME_EN" />
+        </property>
+        <property name="telfUsedPers" type="string">
+            <column name="TELF_USED_PERS" />
+        </property>
+        <property name="tel2UserPers" type="string">
+            <column name="TEL2_USER_PERS" />
+        </property>
+        <property name="sexUsed" type="string">
+            <column name="SEX_USED" />
+        </property>
+        <property name="dateCreationUsed" type="date">
+            <column name="DATE_CREATION_USED" length="10" />
+        </property>
+        <property name="dateAffecUsedateSystem" type="date">
+            <column name="DATE_AFFEC_USEDATE_SYSTEM" length="10" />
+        </property>
+        <property name="dateBirthUsed" type="date">
+            <column name="DATE_BIRTH_USED" length="10" />
+        </property>
+        <property name="identityPlaceUsed" type="string">
+            <column name="IDENTITY_PLACE_USED" />
+        </property>
+        <property name="placeBirthUsed" type="string">
+            <column name="PLACE___BIRTH___USED" />
+        </property>
+        <property name="email1Used" type="string">
+            <column name="EMAIL1___USED" />
+        </property>
+        <property name="email2Used" type="string">
+            <column name="EMAIL2___USED" />
+        </property>
+        <property name="address1Used" type="string">
+            <column name="ADDRESS1_USED" />
+        </property>
+        <property name="address2Used" type="string">
+            <column name="ADDRESS2_USED" />
+        </property>
+        <property name="indicationAdr" type="string">
+            <column name="INDICATION_ADR" />
+        </property>
+        <property name="noteUsed" type="string">
+            <column name="NOTE___USED__" />
+        </property>
+        <property name="dateIssueCin" type="date">
+            <column name="DATE_ISSUE_CIN" length="10" />
+        </property>
+        <property name="dateIssuePa" type="date">
+            <column name="DATE___ISSUE___PA" length="10" />
+        </property>
+        <property name="dateExpirationAp" type="date">
+            <column name="DATE___EXPIRATION___AP" length="10" />
+        </property>
+        <property name="urlPhoto" type="string">
+            <column name="URL_PHOTO" />
+        </property>
+    </class>
+</hibernate-mapping>

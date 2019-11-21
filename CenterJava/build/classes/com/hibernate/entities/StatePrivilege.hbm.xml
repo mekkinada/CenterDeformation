@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7-Jan-2019 9:27:06 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.entities.StatePrivilege" table="state__privilege" catalog="center" optimistic-lock="version">
+        <id name="idStatePrivilege" type="int">
+            <column name="ID_STATE__PRIVILEGE" />
+            <generator class="assigned" />
+        </id>
+        <property name="libStatePrivAr" type="string">
+            <column name="LIB_STATE_PRIV_AR" />
+        </property>
+        <property name="libEtatPrivEn" type="string">
+            <column name="LIB__ETAT_PRIV_EN" />
+        </property>
+        <property name="descpStatePriv" type="string">
+            <column name="DESCP_STATE_PRIV" />
+        </property>
+    </class>
+</hibernate-mapping>

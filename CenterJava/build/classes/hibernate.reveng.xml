@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="center"/>
+  <table-filter match-name="privilege_profile"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="civil_state"/>
+  <table-filter match-name="privilege"/>
+  <table-filter match-name="country"/>
+  <table-filter match-name="state__profile"/>
+  <table-filter match-name="user_log"/>
+  <table-filter match-name="state_locality"/>
+  <table-filter match-name="courses_students"/>
+  <table-filter match-name="locality"/>
+  <table-filter match-name="state__privilege"/>
+  <table-filter match-name="state_used"/>
+  <table-filter match-name="type_user"/>
+  <table-filter match-name="courses"/>
+  <table-filter match-name="state__governorate"/>
+  <table-filter match-name="action"/>
+  <table-filter match-name="trainer"/>
+  <table-filter match-name="students"/>
+  <table-filter match-name="state_country"/>
+  <table-filter match-name="profile"/>
+  <table-filter match-name="private_user"/>
+  <table-filter match-name="state_delegation"/>
+  <table-filter match-name="governorate"/>
+  <table-filter match-name="delegation"/>
+</hibernate-reverse-engineering>
